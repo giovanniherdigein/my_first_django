@@ -1,0 +1,10 @@
+{% extends 'crudsite/default.html' %}
+{% block title %} Insert {% endblock title %}
+{% block main %}
+    <h1> Update Item </h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}<br/>
+     <a href="/" class="btn btn-warning">Cancel</a> <input type="submit" class="btn btn-primary" value="submit" />
+</form>
+{% endblock main %}

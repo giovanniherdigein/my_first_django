@@ -1,0 +1,10 @@
+{% extends 'crudsite/default.html' %}
+{% block title %} Create {% endblock title %}
+    {% block main %}
+<h1> Create Item </h1>
+    <form method="post" action="{% url 'crudsite:create_item' %}">
+        {% csrf_token %}
+        {{ form }}<br/>
+        <a href="/" class="btn btn-warning">Cancel</a> <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+    {% endblock main %}

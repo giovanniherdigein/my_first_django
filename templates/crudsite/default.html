@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+    <html>
+        <header>
+            <title>{% block title %} {% endblock title %}</title>
+            <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+             <link rel="stylesheet" href="{% static 'crudsite/css/bootstrap.min.css' %}" />
+        </header>
+        <body class="flex">
+        <div class="container">
+            {% block main %}{% endblock main %}
+        </div>
+        </body>
+    </html>

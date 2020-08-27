@@ -1,0 +1,25 @@
+<! DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Index</title>
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'crudsite/css/bootstrap.min.css' %}" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Crudtest</h1>
+            <a href="/create_item" class="btn btn-outline-primary">Add one</a><br/>
+            <ul class="list-group ">
+                {% for item in items %}
+                   <li class="list-group-item">
+                       {{ item }}
+                       <span class="d-flex justify-content-sm-end">
+                           <a href=" {% url 'crudsite:update_item' item.id %}" class="btn btn-warning btn-sm">update</a> |<a href=" {% url 'crudsite:delete_item' item.id %}" class="btn btn-primary btn-sm">delete</a>
+                       </span>
+                   </li>
+                {% endfor %}
+            </ul>
+        </div><br/>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'crudsite/default.html' %}
+{% block title %} Delete {%endblock title %}
+    {% block main %}
+<p>Sure you want to delete {{item}} ?</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <a href="/" class="btn btn-warning">Cancel</a>
+    <input type="submit" value="Confirm" class="btn btn-primary" >
+</form>
+{% endblock main %}
